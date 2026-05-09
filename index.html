@@ -367,6 +367,19 @@ footer{background:#050810;padding:60px 5% 30px;border-top:1px solid rgba(0,212,2
 </div>
 
 <footer>
+<!-- ADMIN LOGIN MODAL -->
+<div id="adminModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#1a2235;border:1px solid rgba(0,212,255,.3);border-radius:12px;padding:36px;width:100%;max-width:380px">
+    <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:6px">Admin Access</h3>
+    <p style="font-size:.83rem;color:#8892a4;margin-bottom:20px">Enter your admin password to continue</p>
+    <input id="adminPass" type="password" placeholder="Password" style="width:100%;padding:11px 14px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.15);border-radius:6px;font-size:.95rem;color:#fff;outline:none;margin-bottom:12px;font-family:'Inter',sans-serif" />
+    <p id="adminErr" style="display:none;color:#ef4444;font-size:.82rem;margin-bottom:10px">Incorrect password. Try again.</p>
+    <div style="display:flex;gap:10px">
+      <button id="adminLoginBtn" style="flex:1;background:#00d4ff;color:#000;padding:11px;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;font-size:.95rem">Enter Dashboard</button>
+      <button id="adminCancel" style="background:transparent;color:#8892a4;padding:11px 16px;border:1px solid rgba(255,255,255,.15);border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif">Cancel</button>
+    </div>
+  </div>
+</div>
   <div class="footer-inner">
     <div class="ftop">
       <div class="fbrand">
@@ -381,12 +394,32 @@ footer{background:#050810;padding:60px 5% 30px;border-top:1px solid rgba(0,212,2
     </div>
     <div class="fbot">
       <p>© 2026 Delco Chimney Sweeps · Wallingford, PA · All Rights Reserved</p>
-      <p>Serving Delaware County, PA since 2009</p>
+      <p>Serving Delaware County, PA since 2009 · <span id="adminTrigger" style="cursor:pointer;opacity:.3;user-select:none" title="">⚙</span></p>
     </div>
   </div>
 </footer>
 
 <script>
+// Admin login
+document.getElementById('adminTrigger').addEventListener('click', function() {
+  document.getElementById('adminModal').style.display = 'flex';
+  document.getElementById('adminPass').focus();
+});
+document.getElementById('adminLoginBtn').addEventListener('click', checkAdmin);
+document.getElementById('adminPass').addEventListener('keydown', e => { if(e.key==='Enter') checkAdmin(); });
+document.getElementById('adminCancel').addEventListener('click', () => { document.getElementById('adminModal').style.display='none'; document.getElementById('adminPass').value=''; document.getElementById('adminErr').style.display='none'; });
+function checkAdmin() {
+  const pass = document.getElementById('adminPass').value;
+  // Change 'delco2026' to whatever password you want
+  if (pass === 'delco2026') {
+    window.location.href = '/admin-dashboard.html';
+  } else {
+    document.getElementById('adminErr').style.display = 'block';
+    document.getElementById('adminPass').value = '';
+    document.getElementById('adminPass').focus();
+  }
+}
+
 const { createClient } = supabase;
 const sb = createClient('https://sfxwlimkshkmdgyofecp.supabase.co','sb_publishable_KuB0-_42_bVJShQ-tT-Ldg_oovGR5CC');
 
