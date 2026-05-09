@@ -260,8 +260,8 @@ function Customers({ toast }) {
                 <td>{c.city}</td>
                 <td>
                   <div style={{display:'flex',gap:6}}>
-                    <button className="btn btn-ghost btn-sm" onClick={() => { setForm(c); setModal('edit'); }}>{Icon.edit}</button>
-                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={() => del(c.id)}>{Icon.trash}</button>
+                    <button className="btn btn-ghost btn-sm" onClick={() => { setForm(c); setModal('edit'); }}>{Icon.edit} Edit</button>
+                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={() => del(c.id)}>{Icon.trash} Delete</button>
                   </div>
                 </td>
               </tr>
@@ -441,10 +441,10 @@ function Estimates({ toast, setPage }) {
                 <td><span className={`badge badge-${e.status}`}>{e.status}</span></td>
                 <td>
                   <div style={{display:'flex',gap:6,flexWrap:'wrap'}}>
-                    <button className="btn btn-ghost btn-sm" onClick={() => setViewing(e)} title="View">👁</button>
-                    <button className="btn btn-ghost btn-sm" onClick={() => openEdit(e)} title="Edit">{Icon.edit}</button>
-                    {e.status !== 'converted' && <button className="btn btn-ghost btn-sm" style={{color:'var(--cyan)'}} onClick={() => convertToInvoice(e)} title="Convert to Invoice">{Icon.convert}</button>}
-                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={() => del(e.id)}>{Icon.trash}</button>
+                    <button className="btn btn-ghost btn-sm" onClick={() => setViewing(e)} title="View">👁 View</button>
+                    <button className="btn btn-ghost btn-sm" onClick={() => openEdit(e)} title="Edit">{Icon.edit} Edit</button>
+                    {e.status !== 'converted' && <button className="btn btn-ghost btn-sm" style={{color:'var(--cyan)'}} onClick={() => convertToInvoice(e)} title="Convert to Invoice">{Icon.convert} To Invoice</button>}
+                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={() => del(e.id)}>{Icon.trash} Delete</button>
                   </div>
                 </td>
               </tr>
@@ -596,9 +596,9 @@ function Invoices({ toast }) {
                 <td><span className={`badge badge-${i.payment_status}`}>{i.payment_status}</span></td>
                 <td>
                   <div style={{display:'flex',gap:6}}>
-                    <button className="btn btn-ghost btn-sm" onClick={()=>setViewing(i)}>👁</button>
-                    {i.payment_status==='unpaid' && <button className="btn btn-success btn-sm" onClick={()=>markPaid(i.id)}>Mark Paid</button>}
-                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={()=>del(i.id)}>{Icon.trash}</button>
+                    <button className="btn btn-ghost btn-sm" onClick={()=>setViewing(i)}>👁 View</button>
+                    {i.payment_status==='unpaid' && <button className="btn btn-success btn-sm" onClick={()=>markPaid(i.id)}>✓ Mark Paid</button>}
+                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={()=>del(i.id)}>{Icon.trash} Delete</button>
                   </div>
                 </td>
               </tr>
@@ -697,8 +697,8 @@ function Scheduling({ toast }) {
                 <td><span className={`badge badge-${a.status}`}>{a.status}</span></td>
                 <td>
                   <div style={{display:'flex',gap:6}}>
-                    <button className="btn btn-ghost btn-sm" onClick={()=>{setForm(a);setModal(true)}}>{Icon.edit}</button>
-                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={()=>del(a.id)}>{Icon.trash}</button>
+                    <button className="btn btn-ghost btn-sm" onClick={()=>{setForm(a);setModal(true)}}>{Icon.edit} Edit</button>
+                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={()=>del(a.id)}>{Icon.trash} Delete</button>
                   </div>
                 </td>
               </tr>
@@ -813,8 +813,8 @@ function Services({ toast }) {
                 <td><span className={`badge ${s.is_active?'badge-approved':'badge-draft'}`}>{s.is_active?'Active':'Inactive'}</span></td>
                 <td>
                   <div style={{display:'flex',gap:6}}>
-                    <button className="btn btn-ghost btn-sm" onClick={()=>{setForm(s);setModal(true)}}>{Icon.edit}</button>
-                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={()=>del(s.id)}>{Icon.trash}</button>
+                    <button className="btn btn-ghost btn-sm" onClick={()=>{setForm(s);setModal(true)}}>{Icon.edit} Edit</button>
+                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={()=>del(s.id)}>{Icon.trash} Delete</button>
                   </div>
                 </td>
               </tr>
@@ -893,9 +893,9 @@ function Requests({ toast }) {
                 <td><span className={`badge badge-${r.status}`}>{r.status}</span></td>
                 <td>
                   <div style={{display:'flex',gap:6}}>
-                    <button className="btn btn-ghost btn-sm" onClick={()=>setViewing(r)}>👁</button>
-                    {r.status==='new' && <button className="btn btn-ghost btn-sm" style={{color:'var(--green)'}} onClick={()=>updateStatus(r.id,'contacted')}>Contacted</button>}
-                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={()=>del(r.id)}>{Icon.trash}</button>
+                    <button className="btn btn-ghost btn-sm" onClick={()=>setViewing(r)}>👁 View</button>
+                    {r.status==='new' && <button className="btn btn-ghost btn-sm" style={{color:'var(--green)'}} onClick={()=>updateStatus(r.id,'contacted')}>✓ Contacted</button>}
+                    <button className="btn btn-ghost btn-sm" style={{color:'var(--red)'}} onClick={()=>del(r.id)}>{Icon.trash} Delete</button>
                   </div>
                 </td>
               </tr>
