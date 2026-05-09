@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Free Estimate | Delco Chimney Sweeps | Delaware County PA</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--dark:#0a0e1a;--dark2:#111827;--dark3:#1a2235;--cyan:#00d4ff;--cyan2:#00a8cc;--gray:#8892a4;--light:#e2e8f0;--green:#22c55e;--max:1140px;--rad:10px}
+html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--light);line-height:1.6;overflow-x:hidden}a{text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,26,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,212,255,.15);padding:0 5%}
+.nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-family:'Rajdhani',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;letter-spacing:.05em}.logo span{color:var(--cyan)}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{color:var(--gray);font-size:.875rem;font-weight:500;padding:7px 11px;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.07)}.nav-links a.active{color:var(--cyan)}
+.nav-admin{background:var(--cyan) !important;color:#000 !important;font-weight:700 !important}.nav-call{border:1px solid rgba(0,212,255,.35) !important;color:var(--cyan) !important;font-weight:600 !important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff}
+.page-hero{padding:120px 5% 56px;background:linear-gradient(135deg,#050810,#0a1628 50%,#0d1f3c);border-bottom:1px solid rgba(0,212,255,.15);text-align:center}
+.tag{display:inline-block;color:var(--cyan);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:#fff;margin-bottom:14px}
+h2{font-family:'Rajdhani',sans-serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700;color:#fff;margin-bottom:14px}
+h3{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.sub{color:var(--gray);font-size:1rem;max-width:520px;margin:0 auto}
+.container{max-width:var(--max);margin:0 auto}
+section{padding:72px 5%}.alt{background:var(--dark2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.contact-info h2{margin-bottom:16px}
+.contact-info p{color:var(--gray);font-size:.93rem;line-height:1.75;margin-bottom:24px}
+.cinfo-cards{display:flex;flex-direction:column;gap:14px}
+.cinfo-card{display:flex;align-items:flex-start;gap:14px;background:var(--dark3);border:1px solid rgba(0,212,255,.1);border-radius:var(--rad);padding:18px}
+.cinfo-icon{width:40px;height:40px;background:rgba(0,212,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.cinfo-card h3{font-size:.9rem;color:#fff;margin-bottom:3px}
+.cinfo-card p,.cinfo-card a{font-size:.85rem;color:var(--gray);transition:color .2s}
+.cinfo-card a:hover{color:var(--cyan)}
+.benefits{list-style:none;margin-bottom:24px}
+.benefits li{display:flex;gap:10px;color:var(--gray);font-size:.88rem;margin-bottom:10px}
+.benefits li::before{content:'✔';color:var(--cyan);font-weight:700;flex-shrink:0}
+.form-card{background:var(--dark3);border:1px solid rgba(0,212,255,.15);border-radius:14px;padding:32px}
+.form-card h2{margin-bottom:6px}
+.form-card .form-sub{color:var(--gray);font-size:.85rem;margin-bottom:24px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:.72rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:6px;font-family:'Inter',sans-serif;font-size:.9rem;color:#fff;outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--cyan)}
+.fg select option{background:#111827}
+.fg textarea{resize:vertical;min-height:100px}
+.fsub{width:100%;background:var(--cyan);color:#000;padding:13px;border:none;border-radius:6px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
+.fsub:hover{background:var(--cyan2)}
+.fnote{font-size:.72rem;color:var(--gray);text-align:center;margin-top:10px}
+.success{display:none;background:rgba(34,197,94,.1);border:1.5px solid var(--green);color:var(--green);padding:20px;border-radius:var(--rad);text-align:center;font-weight:600;margin-top:16px;font-size:.95rem}
+footer{background:#050810;padding:48px 5% 24px;border-top:1px solid rgba(0,212,255,.1)}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:28px}
+.fbrand-name{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:.05em}.fbrand-name span{color:var(--cyan)}
+.fbrand p{color:var(--gray);font-size:.8rem;margin-top:8px;line-height:1.65}
+.fcol h4{font-family:'Rajdhani',sans-serif;font-size:.88rem;font-weight:700;color:#fff;margin-bottom:10px}
+.fcol a,.fcol p{display:block;color:var(--gray);font-size:.8rem;margin-bottom:6px;transition:color .2s}.fcol a:hover{color:var(--cyan)}
+.fbot{border-top:1px solid rgba(255,255,255,.05);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.fbot p{font-size:.72rem;color:var(--gray)}
+.admin-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;padding:20px}
+.admin-modal.open{display:flex}
+.admin-box{background:#1a2235;border:1px solid rgba(0,212,255,.3);border-radius:12px;padding:36px;width:100%;max-width:360px;text-align:center}
+.admin-box h3{font-family:'Rajdhani',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:6px}
+.admin-box .sub2{font-size:.82rem;color:var(--gray);margin-bottom:20px}
+.admin-box input{width:100%;padding:12px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.15);border-radius:6px;font-size:.95rem;color:#fff;outline:none;margin-bottom:12px;font-family:'Inter',sans-serif;text-align:center}
+.admin-box input:focus{border-color:var(--cyan)}
+.admin-err{display:none;color:#ef4444;font-size:.8rem;margin-bottom:10px}
+.admin-btns{display:flex;gap:10px}
+.admin-btns .ab1{flex:1;background:var(--cyan);color:#000;padding:11px;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif}
+.admin-btns .ab2{background:transparent;color:var(--gray);padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(10,14,26,.98);padding:16px 5%;gap:6px;border-bottom:1px solid rgba(0,212,255,.15)}.nav-links.open{display:flex}.contact-grid{grid-template-columns:1fr}.frow{grid-template-columns:1fr}.ftop{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">DELCO <span>CHIMNEY</span> SWEEPS</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="tel:6108039649" class="nav-call">📞 (610) 803-9649</a></li>
+      <li><a href="#" class="nav-admin" id="adminBtn">Admin ⚙</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="tag">Get In Touch</span>
+  <h1>Contact & Free Estimates</h1>
+  <p class="sub">Call, email, or fill out the form. We respond within 24 hours — usually the same day.</p>
+</div>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="tag">Contact Info</span>
+        <h2>Let's Talk About Your Chimney</h2>
+        <p>Whether you need a routine cleaning, an inspection for a home sale, or an estimate for repairs — reach out and we'll get back to you fast.</p>
+        <ul class="benefits">
+          <li>Estimates are always completely free</li>
+          <li>We respond within 24 hours — usually same day</li>
+          <li>Flexible scheduling including weekends</li>
+          <li>Clear, honest pricing before any work begins</li>
+          <li>Fully insured on every job</li>
+        </ul>
+        <div class="cinfo-cards">
+          <div class="cinfo-card">
+            <div class="cinfo-icon">📞</div>
+            <div>
+              <h3>Phone</h3>
+              <a href="tel:6108039649">(610) 803-9649</a>
+              <p>Mon–Fri 8am–6pm · Weekends available</p>
+            </div>
+          </div>
+          <div class="cinfo-card">
+            <div class="cinfo-icon">📧</div>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:info@delcochimneysweeps.com">info@delcochimneysweeps.com</a>
+              <p>We respond within 24 hours</p>
+            </div>
+          </div>
+          <div class="cinfo-card">
+            <div class="cinfo-icon">📍</div>
+            <div>
+              <h3>Location</h3>
+              <p>Wallingford, PA 19086</p>
+              <p>Serving all of Delaware County</p>
+            </div>
+          </div>
+          <div class="cinfo-card">
+            <div class="cinfo-icon">⏰</div>
+            <div>
+              <h3>Hours</h3>
+              <p>Mon–Fri: 8:00am – 6:00pm</p>
+              <p>Weekend appointments available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="form-card">
+          <h2>Request Service</h2>
+          <p class="form-sub">Fill out the form below and we'll get back to you within 24 hours with a free estimate.</p>
+          <form id="reqForm" onsubmit="handleReq(event)">
+            <div class="frow">
+              <div class="fg"><label>First Name *</label><input type="text" name="first_name" required placeholder="John"></div>
+              <div class="fg"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Smith"></div>
+            </div>
+            <div class="fg"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="(610) 555-0000"></div>
+            <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@email.com"></div>
+            <div class="fg"><label>Service Address *</label><input type="text" name="address" required placeholder="123 Main St, Wallingford, PA 19086"></div>
+            <div class="fg">
+              <label>Service Needed *</label>
+              <select name="service_type" required>
+                <option value="" disabled selected>Select a service...</option>
+                <option>Chimney Cleaning — $175</option>
+                <option>Level 1 Inspection — $162</option>
+                <option>Level 2 Video Inspection — $250</option>
+                <option>Level 3 Inspection — $350</option>
+                <option>Dryer Vent Cleaning — $175</option>
+                <option>Chimney Repair — Free Estimate</option>
+                <option>Flue Relining — Free Estimate</option>
+                <option>Stove Services — Free Estimate</option>
+                <option>Chimney Cap / Crown — Free Estimate</option>
+                <option>Not Sure — Need Inspection First</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label>Preferred Contact Method</label>
+              <select name="contact_pref">
+                <option value="phone">Phone call</option>
+                <option value="text">Text message</option>
+                <option value="email">Email</option>
+              </select>
+            </div>
+            <div class="fg"><label>Additional Details</label><textarea name="message" placeholder="Last time chimney was cleaned, any issues you've noticed, type of fireplace, any other details that might help..."></textarea></div>
+            <button type="submit" class="fsub">Send Request →</button>
+            <p class="fnote">🔒 Your info stays private. We never share or sell your data.</p>
+          </form>
+          <div class="success" id="successMsg">
+            ✅ Request received! We'll be in touch within 24 hours.<br>
+            <span style="font-weight:400;font-size:.85rem;color:var(--green);opacity:.8">Or call us now at (610) 803-9649</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ftop">
+      <div><div class="fbrand-name">DELCO <span>CHIMNEY</span> SWEEPS</div><p class="fbrand">Professional chimney care in Delaware County, PA since 2009.<br><br><a href="tel:6108039649" style="color:var(--cyan);font-weight:600">(610) 803-9649</a><br><a href="mailto:info@delcochimneysweeps.com" style="color:var(--gray)">info@delcochimneysweeps.com</a></p></div>
+      <div class="fcol"><h4>Services</h4><a href="services.html">Chimney Cleaning</a><a href="services.html">Inspections</a><a href="services.html">Dryer Vent</a><a href="services.html">Repairs</a></div>
+      <div class="fcol"><h4>Company</h4><a href="about.html">About Us</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div>
+      <div class="fcol"><h4>Contact</h4><a href="tel:6108039649">(610) 803-9649</a><p>Wallingford, PA 19086</p><p>Mon–Fri: 8am–6pm</p><p>Weekends available</p></div>
+    </div>
+    <div class="fbot"><p>© 2026 Delco Chimney Sweeps · All Rights Reserved</p><p>Serving Delaware County, PA since 2009</p></div>
+  </div>
+</footer>
+
+<div class="admin-modal" id="adminModal">
+  <div class="admin-box">
+    <h3>Admin Access</h3><p class="sub2">Enter your password</p>
+    <input type="password" id="adminPass" placeholder="Admin password" />
+    <p class="admin-err" id="adminErr">Incorrect password.</p>
+    <div class="admin-btns"><button class="ab1" id="adminLoginBtn">Enter Dashboard</button><button class="ab2" id="adminCancel">Cancel</button></div>
+  </div>
+</div>
+
+<script>
+const { createClient } = supabase;
+const sb = createClient('https://sfxwlimkshkmdgyofecp.supabase.co','sb_publishable_KuB0-_42_bVJShQ-tT-Ldg_oovGR5CC');
+
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.getElementById('adminBtn').addEventListener('click',e=>{e.preventDefault();document.getElementById('adminModal').classList.add('open');document.getElementById('adminPass').focus();});
+document.getElementById('adminCancel').addEventListener('click',()=>{document.getElementById('adminModal').classList.remove('open');document.getElementById('adminPass').value='';document.getElementById('adminErr').style.display='none';});
+document.getElementById('adminLoginBtn').addEventListener('click',checkAdmin);
+document.getElementById('adminPass').addEventListener('keydown',e=>{if(e.key==='Enter')checkAdmin();});
+function checkAdmin(){const p=document.getElementById('adminPass').value;if(p==='delco2026'){window.location.href='admin-dashboard.html';}else{document.getElementById('adminErr').style.display='block';document.getElementById('adminPass').value='';}}
+
+async function handleReq(e) {
+  e.preventDefault();
+  const form = document.getElementById('reqForm');
+  const d = Object.fromEntries(new FormData(form));
+  const btn = form.querySelector('.fsub');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const { error } = await sb.from('service_requests').insert([{
+    name: d.first_name+' '+d.last_name,
+    email: d.email||'',
+    phone: d.phone,
+    address: d.address,
+    service_type: d.service_type,
+    message: (d.message||'') + (d.contact_pref ? ' [Prefers: '+d.contact_pref+']' : ''),
+    status: 'new'
+  }]);
+  if (error) {
+    btn.textContent = 'Send Request →';
+    btn.disabled = false;
+    alert('Something went wrong. Please call us at (610) 803-9649');
+    return;
+  }
+  form.style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+</script>
+</body>
+</html>

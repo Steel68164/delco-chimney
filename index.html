@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Delco Chimney Sweeps | Delaware County PA | (610) 803-9649</title>
-<meta name="description" content="Professional chimney cleaning, inspection and repair in Delaware County PA. 15 years experience. Licensed & insured. Free estimates. Call (610) 803-9649.">
+<meta name="description" content="Professional chimney cleaning, inspection and repair in Delaware County PA. 15 years experience. Free estimates. Call (610) 803-9649.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
@@ -12,184 +12,132 @@
 :root{--dark:#0a0e1a;--dark2:#111827;--dark3:#1a2235;--cyan:#00d4ff;--cyan2:#00a8cc;--gray:#8892a4;--light:#e2e8f0;--white:#fff;--max:1140px;--rad:10px}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--light);line-height:1.6;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,26,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,212,255,.15);padding:0 5%}
+a{text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,26,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,212,255,.15);padding:0 5%}
 .nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px}
-.logo{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:.05em}
+.logo{font-family:'Rajdhani',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;letter-spacing:.05em}
 .logo span{color:var(--cyan)}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
-.nav-links a{color:var(--gray);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:#fff}
-.nav-cta{background:var(--cyan) !important;color:#000 !important;padding:9px 22px;border-radius:6px;font-weight:700 !important}
-.nav-cta:hover{background:var(--cyan2) !important}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{color:var(--gray);font-size:.875rem;font-weight:500;padding:7px 11px;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav-links a.active{color:var(--cyan)}
+.nav-admin{background:var(--cyan) !important;color:#000 !important;font-weight:700 !important}
+.nav-admin:hover{background:var(--cyan2) !important;color:#000 !important}
+.nav-call{border:1px solid rgba(0,212,255,.35) !important;color:var(--cyan) !important;font-weight:600 !important}
+.nav-call:hover{background:rgba(0,212,255,.08) !important}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:24px;height:2px;background:#fff;transition:all .3s}
-.hero{min-height:100vh;padding:110px 5% 80px;background:linear-gradient(135deg,#050810 0%,#0a1628 40%,#0d1f3c 100%);display:flex;align-items:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(0,212,255,.07) 0%,transparent 60%)}
+.hamburger span{display:block;width:24px;height:2px;background:#fff}
+.hero{min-height:100vh;padding:100px 5% 70px;background:linear-gradient(135deg,#050810 0%,#0a1628 45%,#0d1f3c 100%);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 50%,rgba(0,212,255,.07) 0%,transparent 60%)}
 .hero-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--cyan);font-size:.75rem;font-weight:700;padding:6px 14px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
-.hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:700;color:#fff;line-height:1.05;margin-bottom:18px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--cyan);font-size:.73rem;font-weight:700;padding:6px 14px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:700;color:#fff;line-height:1.05;margin-bottom:16px}
 .hero h1 em{color:var(--cyan);font-style:normal}
-.hero p{color:var(--gray);font-size:1.05rem;max-width:480px;margin-bottom:32px}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:6px;font-size:1rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
-.btn-primary{background:var(--cyan);color:#000}
-.btn-primary:hover{background:var(--cyan2);transform:translateY(-1px)}
-.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.25)}
-.btn-outline:hover{border-color:#fff;transform:translateY(-1px)}
-.hero-stats{display:flex;gap:32px;flex-wrap:wrap}
-.stat-num{font-family:'Rajdhani',sans-serif;font-size:2.2rem;font-weight:700;color:var(--cyan);display:block;line-height:1}
-.stat-label{font-size:.72rem;color:var(--gray);text-transform:uppercase;letter-spacing:.06em}
-.hero-visual{position:relative}
-.hero-visual img{width:100%;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,.6)}
-.hero-visual::before{content:'';position:absolute;inset:-2px;border-radius:18px;background:linear-gradient(135deg,rgba(0,212,255,.3),transparent 50%);z-index:-1}
-.trust-bar{background:var(--dark3);border-top:2px solid var(--cyan);border-bottom:1px solid rgba(0,212,255,.15);padding:14px 5%}
-.trust-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:7px;font-size:.83rem;font-weight:600;color:var(--gray)}
+.hero p{color:var(--gray);font-size:1.05rem;max-width:480px;margin-bottom:28px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:6px;font-size:.95rem;font-weight:700;border:none;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--cyan);color:#000}.btn-primary:hover{background:var(--cyan2);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.25)}.btn-outline:hover{border-color:#fff;transform:translateY(-1px)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat-num{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--cyan);display:block;line-height:1}
+.stat-label{font-size:.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:.06em}
+.hero-img{position:relative}
+.hero-img img{width:100%;border-radius:16px;box-shadow:0 24px 64px rgba(0,0,0,.6)}
+.hero-img::before{content:'';position:absolute;inset:-2px;border-radius:18px;background:linear-gradient(135deg,rgba(0,212,255,.3),transparent 50%);z-index:-1}
+.trust-bar{background:var(--dark3);border-top:2px solid var(--cyan);border-bottom:1px solid rgba(0,212,255,.1);padding:13px 5%}
+.trust-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:var(--gray)}
 .trust-item .i{color:var(--cyan)}
-section{padding:88px 5%}
+.services-preview{padding:80px 5%;background:var(--dark2)}
 .container{max-width:var(--max);margin:0 auto}
 .tag{display:inline-block;color:var(--cyan);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
-h2{font-family:'Rajdhani',sans-serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:14px}
-.sub{color:var(--gray);font-size:1rem;max-width:520px;margin-bottom:48px}
-.tc{text-align:center}
-.tc .sub{margin:0 auto 48px}
-#services{background:var(--dark2)}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.scard{background:var(--dark3);border:1px solid rgba(0,212,255,.1);border-radius:var(--rad);padding:28px;transition:all .2s;position:relative;overflow:hidden}
-.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),transparent);opacity:0;transition:opacity .2s}
-.scard:hover{border-color:rgba(0,212,255,.3);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,212,255,.07)}
-.scard:hover::before{opacity:1}
-.scard-icon{font-size:2rem;margin-bottom:14px;display:block}
-.scard h3{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px}
-.scard p{color:var(--gray);font-size:.87rem;line-height:1.65;margin-bottom:14px}
-.scard ul{list-style:none;margin-bottom:14px}
-.scard ul li{font-size:.82rem;color:var(--gray);padding:3px 0;display:flex;gap:8px}
-.scard ul li::before{content:'✓';color:var(--cyan);font-weight:700;flex-shrink:0}
-.price-tag{display:inline-block;background:rgba(0,212,255,.1);color:var(--cyan);font-weight:700;font-size:.82rem;padding:4px 12px;border-radius:100px;border:1px solid rgba(0,212,255,.2)}
-#request{background:var(--dark)}
-.req-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
-.req-bens{list-style:none;margin-top:20px}
-.req-bens li{display:flex;gap:10px;color:var(--gray);font-size:.9rem;margin-bottom:12px}
-.req-bens li::before{content:'✔';color:var(--cyan);font-weight:700;flex-shrink:0}
-.call-box{margin-top:28px;padding:18px;background:#0a1628;border:1px solid rgba(0,212,255,.2);border-radius:var(--rad)}
-.call-box .num{font-family:'Rajdhani',sans-serif;font-size:1.6rem;font-weight:700;color:var(--cyan);text-decoration:none}
-.fcard{background:var(--dark3);border:1px solid rgba(0,212,255,.15);border-radius:14px;padding:32px}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.fg{margin-bottom:16px}
-.fg label{display:block;font-size:.75rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
-.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:6px;font-family:'Inter',sans-serif;font-size:.9rem;color:#fff;outline:none;transition:border-color .2s}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--cyan)}
-.fg select option{background:#111827}
-.fg textarea{resize:vertical;min-height:90px}
-.fsub{width:100%;background:var(--cyan);color:#000;padding:14px;border:none;border-radius:6px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
-.fsub:hover{background:var(--cyan2)}
-.fnote{font-size:.73rem;color:var(--gray);text-align:center;margin-top:10px}
-.success{display:none;background:rgba(34,197,94,.1);border:1.5px solid #22c55e;color:#22c55e;padding:16px;border-radius:6px;text-align:center;font-weight:600;margin-top:16px}
-#pricing{background:var(--dark2)}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.pcard{background:var(--dark3);border:1.5px solid rgba(0,212,255,.1);border-radius:var(--rad);padding:26px;text-align:center;position:relative}
-.pcard.hot{border-color:var(--cyan)}
-.hot-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cyan);color:#000;font-size:.7rem;font-weight:700;padding:3px 14px;border-radius:100px;white-space:nowrap;text-transform:uppercase;letter-spacing:.05em}
-.pcard h3{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;margin:10px 0 6px}
-.pamount{font-family:'Rajdhani',sans-serif;font-size:2.2rem;font-weight:700;color:var(--cyan)}
-.pamount small{font-size:1rem;color:var(--gray);font-weight:400}
-.pdesc{color:var(--gray);font-size:.78rem;margin:6px 0 14px}
-.plist{list-style:none;text-align:left}
-.plist li{font-size:.78rem;color:var(--gray);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:8px}
-.plist li::before{content:'✓';color:var(--cyan);font-weight:700;flex-shrink:0}
-.plist li:last-child{border-bottom:none}
-.pnote{text-align:center;margin-top:24px;font-size:.88rem;color:var(--gray)}
-.pnote strong{color:#fff}
-#why{background:var(--dark)}
-.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.wcard{padding:22px;border-left:3px solid var(--cyan);background:var(--dark3);border-radius:0 var(--rad) var(--rad) 0}
-.wcard h3{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
-.wcard p{font-size:.83rem;color:var(--gray)}
-#reviews{background:var(--dark2)}
+h2{font-family:'Rajdhani',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;color:#fff;line-height:1.15;margin-bottom:14px}
+.sub{color:var(--gray);font-size:1rem;max-width:520px;margin-bottom:40px}
+.tc{text-align:center}.tc .sub{margin:0 auto 40px}
+.svcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:32px}
+.svc{background:var(--dark3);border:1px solid rgba(0,212,255,.1);border-radius:var(--rad);padding:22px;display:flex;align-items:flex-start;gap:14px;transition:all .2s}
+.svc:hover{border-color:rgba(0,212,255,.3);transform:translateY(-2px)}
+.svc-icon{font-size:1.6rem;flex-shrink:0;margin-top:2px}
+.svc h3{font-family:'Rajdhani',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:4px}
+.svc p{font-size:.8rem;color:var(--gray);line-height:1.5}
+.svc-price{font-size:.78rem;font-weight:700;color:var(--cyan);margin-top:6px}
+.why-strip{padding:72px 5%;background:var(--dark)}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.wcard{padding:20px;border-left:3px solid var(--cyan);background:var(--dark3);border-radius:0 var(--rad) var(--rad) 0}
+.wcard h3{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px}
+.wcard p{font-size:.82rem;color:var(--gray)}
+.reviews-strip{padding:72px 5%;background:var(--dark2)}
 .rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.rcard{background:var(--dark3);border:1px solid rgba(0,212,255,.1);border-radius:var(--rad);padding:24px}
-.stars{color:#f59e0b;font-size:.9rem;letter-spacing:2px;margin-bottom:10px}
-.rtext{font-size:.87rem;color:var(--gray);font-style:italic;margin-bottom:14px;line-height:1.7}
-.rname{font-size:.82rem;font-weight:700;color:#fff}
+.rcard{background:var(--dark3);border:1px solid rgba(0,212,255,.1);border-radius:var(--rad);padding:22px}
+.stars{color:#f59e0b;font-size:.85rem;letter-spacing:2px;margin-bottom:10px}
+.rtext{font-size:.85rem;color:var(--gray);font-style:italic;margin-bottom:12px;line-height:1.65}
+.rname{font-size:.8rem;font-weight:700;color:#fff}
 .rname span{font-weight:400;color:var(--gray)}
-#about{background:var(--dark)}
-.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.about-img-wrap{border-radius:16px;overflow:hidden;position:relative}
-.about-img-wrap img{width:100%;display:block}
-.about-img-wrap::after{content:'SAFE. CLEAN. TRUSTED.';position:absolute;bottom:20px;left:20px;right:20px;background:rgba(0,212,255,.9);color:#000;font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;text-align:center;padding:10px;border-radius:6px;letter-spacing:.1em}
-.about-text p{color:var(--gray);margin-bottom:14px;line-height:1.75}
-.about-text strong{color:#fff}
-.certs{display:flex;flex-direction:column;gap:8px;margin-top:18px}
-.cert{display:flex;align-items:center;gap:10px;font-size:.87rem;color:var(--gray)}
-.cert-dot{width:8px;height:8px;background:var(--cyan);border-radius:50%;flex-shrink:0}
-#area{background:var(--dark2)}
-.atags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.atag{background:var(--dark3);border:1px solid rgba(0,212,255,.2);color:var(--gray);padding:7px 16px;border-radius:100px;font-size:.83rem;font-weight:500;transition:all .2s;cursor:default}
-.atag:hover{border-color:var(--cyan);color:var(--cyan)}
-.cta-section{background:linear-gradient(135deg,#0d1f3c,#051020);border-top:1px solid rgba(0,212,255,.2);border-bottom:1px solid rgba(0,212,255,.2);padding:60px 5%;text-align:center}
-.cta-section h2{margin-bottom:12px}
-.cta-section p{color:var(--gray);margin-bottom:28px}
+.cta-strip{background:linear-gradient(135deg,#0d1f3c,#051020);border-top:1px solid rgba(0,212,255,.2);padding:64px 5%;text-align:center}
+.cta-strip p{color:var(--gray);margin-bottom:24px}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-footer{background:#050810;padding:60px 5% 30px;border-top:1px solid rgba(0,212,255,.1)}
-.footer-inner{max-width:var(--max);margin:0 auto}
-.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.fbrand p{color:var(--gray);font-size:.83rem;margin-top:10px;line-height:1.7;max-width:260px}
-.fcol h4{font-family:'Rajdhani',sans-serif;font-size:.95rem;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:.05em}
-.fcol a,.fcol p{display:block;color:var(--gray);font-size:.82rem;text-decoration:none;margin-bottom:7px;transition:color .2s}
+footer{background:#050810;padding:48px 5% 24px;border-top:1px solid rgba(0,212,255,.1)}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:28px}
+.fbrand-name{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:.05em}
+.fbrand-name span{color:var(--cyan)}
+.fbrand p{color:var(--gray);font-size:.8rem;margin-top:8px;line-height:1.65}
+.fcol h4{font-family:'Rajdhani',sans-serif;font-size:.88rem;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:.05em}
+.fcol a,.fcol p{display:block;color:var(--gray);font-size:.8rem;margin-bottom:6px;transition:color .2s}
 .fcol a:hover{color:var(--cyan)}
-.fbot{border-top:1px solid rgba(255,255,255,.05);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.fbot p{font-size:.75rem;color:var(--gray)}
-.flogo{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:#fff}
-.flogo span{color:var(--cyan)}
-@media(max-width:768px){
-  .hamburger{display:flex}
-  .nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(10,14,26,.98);padding:20px 5%;gap:14px}
-  .nav-links.open{display:flex}
-  .hero-inner,.req-wrap,.about-inner{grid-template-columns:1fr;gap:32px}
-  .hero-visual{display:none}
-  .frow,.ftop{grid-template-columns:1fr}
-  section{padding:60px 5%}
-}
+.fbot{border-top:1px solid rgba(255,255,255,.05);padding-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.fbot p{font-size:.72rem;color:var(--gray)}
+.admin-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;padding:20px}
+.admin-modal.open{display:flex}
+.admin-box{background:#1a2235;border:1px solid rgba(0,212,255,.3);border-radius:12px;padding:36px;width:100%;max-width:360px;text-align:center}
+.admin-box h3{font-family:'Rajdhani',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:6px}
+.admin-box .sub2{font-size:.82rem;color:var(--gray);margin-bottom:20px}
+.admin-box input{width:100%;padding:12px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.15);border-radius:6px;font-size:.95rem;color:#fff;outline:none;margin-bottom:12px;font-family:'Inter',sans-serif;text-align:center;transition:border-color .2s}
+.admin-box input:focus{border-color:var(--cyan)}
+.admin-err{display:none;color:#ef4444;font-size:.8rem;margin-bottom:10px}
+.admin-btns{display:flex;gap:10px}
+.admin-btns .ab1{flex:1;background:var(--cyan);color:#000;padding:11px;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;font-size:.92rem}
+.admin-btns .ab2{background:transparent;color:var(--gray);padding:11px 14px;border:1px solid rgba(255,255,255,.15);border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-img{display:none}.hero-stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(10,14,26,.98);padding:16px 5%;gap:6px;border-bottom:1px solid rgba(0,212,255,.15)}.nav-links.open{display:flex}.ftop{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo">DELCO <span>CHIMNEY</span> SWEEPS</a>
+    <a href="index.html" class="logo">DELCO <span>CHIMNEY</span> SWEEPS</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#area">Service Area</a></li>
-      <li><a href="#request" class="nav-cta">Free Estimate</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="tel:6108039649" class="nav-call">📞 (610) 803-9649</a></li>
+      <li><a href="#" class="nav-admin" id="adminBtn">Admin ⚙</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<section class="hero" id="home">
+<section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-badge">⚡ Delaware County's Premier Chimney Experts</div>
+      <div class="badge">⚡ Delaware County's Premier Chimney Experts</div>
       <h1>Safe. Clean.<br><em>Trusted.</em><br>Since 2009.</h1>
       <p>From routine chimney cleaning to comprehensive inspections and repairs — 15 years of hands-on experience protecting Delaware County homes and families.</p>
       <div class="hero-btns">
-        <a href="#request" class="btn btn-primary">Get Free Estimate →</a>
+        <a href="contact.html" class="btn btn-primary">Get Free Estimate →</a>
         <a href="tel:6108039649" class="btn btn-outline">📞 (610) 803-9649</a>
       </div>
       <div class="hero-stats">
-        <div><span class="stat-num">15+</span><span class="stat-label">Years Experience</span></div>
-        <div><span class="stat-num">500+</span><span class="stat-label">Jobs Completed</span></div>
-        <div><span class="stat-num">5★</span><span class="stat-label">Google Rating</span></div>
+        <div><span class="stat-num">15+</span><span class="stat-label">Years Exp.</span></div>
+        <div><span class="stat-num">500+</span><span class="stat-label">Jobs Done</span></div>
+        <div><span class="stat-num">5★</span><span class="stat-label">Google</span></div>
         <div><span class="stat-num">100%</span><span class="stat-label">Insured</span></div>
       </div>
     </div>
-    <div class="hero-visual">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Delco Chimney Sweeps" onerror="this.parentElement.style.display='none'" />
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&q=80" alt="Delco Chimney Sweeps" onerror="this.parentElement.style.display='none'" />
     </div>
   </div>
 </section>
@@ -205,246 +153,104 @@ footer{background:#050810;padding:60px 5% 30px;border-top:1px solid rgba(0,212,2
   </div>
 </div>
 
-<section id="services">
+<section class="services-preview">
   <div class="container">
-    <div class="tc"><span class="tag">What We Do</span><h2>Professional Chimney Services</h2><p class="sub">Comprehensive chimney and venting care backed by 15 years of hands-on experience.</p></div>
-    <div class="grid3">
-      <div class="scard"><span class="scard-icon">🧹</span><h3>Chimney Cleaning</h3><p>Professional cleaning to remove dangerous creosote buildup using professional-grade tools — not just a quick brush.</p><ul><li>Removes creosote and soot</li><li>Prevents chimney fires</li><li>Improves heating efficiency</li><li>Floor & furniture protection</li></ul><span class="price-tag">$175 per flue</span></div>
-      <div class="scard"><span class="scard-icon">🔍</span><h3>Level 1 Inspection</h3><p>Basic visual inspection of readily accessible portions of your chimney. Recommended annually for all fireplace users.</p><ul><li>Visual examination</li><li>Checks structural soundness</li><li>Damper & cap check</li><li>Written condition report</li></ul><span class="price-tag">$162</span></div>
-      <div class="scard"><span class="scard-icon">📹</span><h3>Level 2 Video Inspection</h3><p>Comprehensive inspection with HD video camera scan of flue interior. Required when selling a home.</p><ul><li>HD video camera inspection</li><li>Required for real estate sales</li><li>Identifies hidden issues</li><li>Full report with photos</li></ul><span class="price-tag">$250</span></div>
-      <div class="scard"><span class="scard-icon">🌀</span><h3>Dryer Vent Cleaning</h3><p>Clogged dryer vents are a leading cause of house fires. We clean and inspect throughout Delaware County.</p><ul><li>Full lint removal</li><li>Airflow test before & after</li><li>Exterior vent inspection</li><li>Fire hazard prevention</li></ul><span class="price-tag">$175</span></div>
-      <div class="scard"><span class="scard-icon">🧱</span><h3>Chimney Repair</h3><p>Crown cracks, leaking chimneys, damaged flue liners, masonry restoration. We handle the full range of repairs.</p><ul><li>Crown and cap repairs</li><li>Masonry restoration</li><li>Waterproofing</li><li>Structural reinforcement</li></ul><span class="price-tag">Free Estimate</span></div>
-      <div class="scard"><span class="scard-icon">🔗</span><h3>Flue Relining</h3><p>Stainless steel flue liner installation for wood, gas, and oil appliances. Required for code compliance.</p><ul><li>Stainless steel liner</li><li>Wood, gas & oil systems</li><li>Code compliant</li><li>Improves draft & safety</li></ul><span class="price-tag">Free Estimate</span></div>
-      <div class="scard"><span class="scard-icon">🔥</span><h3>Stove Services</h3><p>Comprehensive maintenance and inspection for wood stoves, pellet stoves, and gas stoves.</p><ul><li>Wood stove cleaning</li><li>Pellet stove maintenance</li><li>Gas stove service</li><li>Ventilation checks</li></ul><span class="price-tag">Free Estimate</span></div>
-      <div class="scard"><span class="scard-icon">🔎</span><h3>Level 3 Inspection</h3><p>In-depth inspection involving removal of components. Performed when serious hazards are suspected.</p><ul><li>Includes Level 1 & 2</li><li>Access to concealed areas</li><li>Structural analysis</li><li>Comprehensive assessment</li></ul><span class="price-tag">$350</span></div>
+    <div class="tc"><span class="tag">Our Services</span><h2>What We Do</h2><p class="sub">Everything your chimney needs — handled by a certified local expert with 15 years of experience.</p></div>
+    <div class="svcgrid">
+      <div class="svc"><span class="svc-icon">🧹</span><div><h3>Chimney Cleaning</h3><p>Professional creosote removal with proper equipment.</p><div class="svc-price">$175 per flue</div></div></div>
+      <div class="svc"><span class="svc-icon">🔍</span><div><h3>Level 1 Inspection</h3><p>Annual visual safety inspection with written report.</p><div class="svc-price">$162</div></div></div>
+      <div class="svc"><span class="svc-icon">📹</span><div><h3>Level 2 Video Inspection</h3><p>HD camera scan — required for home sales.</p><div class="svc-price">$250</div></div></div>
+      <div class="svc"><span class="svc-icon">🌀</span><div><h3>Dryer Vent Cleaning</h3><p>Lint removal and airflow test to prevent fires.</p><div class="svc-price">$175</div></div></div>
+      <div class="svc"><span class="svc-icon">🧱</span><div><h3>Chimney Repair</h3><p>Masonry, crowns, caps, waterproofing and more.</p><div class="svc-price">Free Estimate</div></div></div>
+      <div class="svc"><span class="svc-icon">🔗</span><div><h3>Flue Relining</h3><p>Stainless steel liner installation for all fuel types.</p><div class="svc-price">Free Estimate</div></div></div>
+      <div class="svc"><span class="svc-icon">🔥</span><div><h3>Stove Services</h3><p>Wood, pellet, and gas stove inspection and cleaning.</p><div class="svc-price">Free Estimate</div></div></div>
+      <div class="svc"><span class="svc-icon">🔎</span><div><h3>Level 3 Inspection</h3><p>In-depth inspection for serious hazard concerns.</p><div class="svc-price">$350</div></div></div>
     </div>
+    <div style="text-align:center"><a href="services.html" class="btn btn-primary">View All Services →</a></div>
   </div>
 </section>
 
-<section id="request">
+<section class="why-strip">
   <div class="container">
-    <div class="req-wrap">
-      <div>
-        <span class="tag">Free Estimates</span>
-        <h2>Request Service Online</h2>
-        <p class="sub" style="margin-bottom:0">Fill out the form and we'll get back to you within 24 hours — usually same day.</p>
-        <ul class="req-bens">
-          <li>We respond within 24 hours — usually same day</li>
-          <li>Clear pricing with no hidden fees</li>
-          <li>In-person estimates available</li>
-          <li>Flexible scheduling including weekends</li>
-          <li>Fully insured on every job</li>
-          <li>15 years of experience behind every visit</li>
-        </ul>
-        <div class="call-box">
-          <p style="font-size:.82rem;color:var(--gray);margin-bottom:6px">Prefer to call?</p>
-          <a href="tel:6108039649" class="num">(610) 803-9649</a>
-          <p style="font-size:.75rem;color:var(--gray);margin-top:4px">Mon–Fri 8am–6pm · Weekends available</p>
-        </div>
-      </div>
-      <div>
-        <div class="fcard">
-          <form id="reqForm" onsubmit="handleReq(event)">
-            <div class="frow">
-              <div class="fg"><label>First Name *</label><input type="text" name="first_name" required placeholder="John"></div>
-              <div class="fg"><label>Last Name *</label><input type="text" name="last_name" required placeholder="Smith"></div>
-            </div>
-            <div class="fg"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="(610) 555-0000"></div>
-            <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@email.com"></div>
-            <div class="fg"><label>Your Address *</label><input type="text" name="address" required placeholder="123 Main St, Wallingford, PA"></div>
-            <div class="fg">
-              <label>Service Needed *</label>
-              <select name="service_type" required>
-                <option value="" disabled selected>Select a service...</option>
-                <option>Chimney Cleaning — $175</option>
-                <option>Level 1 Inspection — $162</option>
-                <option>Level 2 Video Inspection — $250</option>
-                <option>Level 3 Inspection — $350</option>
-                <option>Dryer Vent Cleaning — $175</option>
-                <option>Chimney Repair — Free Estimate</option>
-                <option>Flue Relining — Free Estimate</option>
-                <option>Stove Services — Free Estimate</option>
-                <option>Not Sure — Need Inspection First</option>
-              </select>
-            </div>
-            <div class="fg"><label>Additional Details</label><textarea name="message" placeholder="Last cleaning date, any issues noticed, type of fireplace..."></textarea></div>
-            <button type="submit" class="fsub">Send My Request →</button>
-            <p class="fnote">🔒 Your info is private. We never sell or share your data.</p>
-          </form>
-          <div class="success" id="successMsg">✅ Request received! We'll be in touch within 24 hours.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="pricing">
-  <div class="container">
-    <div class="tc"><span class="tag">Transparent Pricing</span><h2>Simple, Honest Pricing</h2><p class="sub">No surprise fees. You'll know the cost before we start. Estimates always free.</p></div>
-    <div class="pgrid">
-      <div class="pcard"><span style="font-size:1.8rem;display:block;margin-bottom:10px">🧹</span><h3>Chimney Cleaning</h3><div class="pamount">$175<small>/flue</small></div><p class="pdesc">Full professional sweep</p><ul class="plist"><li>Flue brush sweep</li><li>Firebox vacuum</li><li>Floor protection</li><li>Basic visual inspection</li></ul></div>
-      <div class="pcard hot"><div class="hot-tag">Most Popular</div><span style="font-size:1.8rem;display:block;margin-bottom:10px">🔍</span><h3>Level 1 Inspection</h3><div class="pamount">$162</div><p class="pdesc">Annual safety check</p><ul class="plist"><li>Full visual inspection</li><li>Written report</li><li>Damper & cap check</li><li>Repair recommendations</li></ul></div>
-      <div class="pcard"><span style="font-size:1.8rem;display:block;margin-bottom:10px">📹</span><h3>Level 2 Inspection</h3><div class="pamount">$250</div><p class="pdesc">Video camera scan</p><ul class="plist"><li>HD video inspection</li><li>Real estate ready</li><li>Photos included</li><li>Full written report</li></ul></div>
-      <div class="pcard"><span style="font-size:1.8rem;display:block;margin-bottom:10px">🌀</span><h3>Dryer Vent</h3><div class="pamount">$175</div><p class="pdesc">Fire hazard prevention</p><ul class="plist"><li>Full lint removal</li><li>Airflow test</li><li>Exterior vent check</li></ul></div>
-    </div>
-    <p class="pnote"><strong>Repairs, relining & stove services:</strong> Always free estimates — we never charge to come take a look.</p>
-  </div>
-</section>
-
-<section id="why">
-  <div class="container">
-    <div class="tc"><span class="tag">Why Choose Us</span><h2>The Delco Difference</h2><p class="sub">We're not a franchise or call center. We're your neighbors in Wallingford, PA.</p></div>
+    <div class="tc"><span class="tag">Why Choose Us</span><h2>The Delco Difference</h2><p class="sub">Local, honest, experienced — we treat your home like ours.</p></div>
     <div class="wgrid">
-      <div class="wcard"><h3>🏅 15 Years Experience</h3><p>Since 2009 protecting Delaware County homes. We've seen every chimney problem — and fixed them all.</p></div>
+      <div class="wcard"><h3>🏅 15 Years Experience</h3><p>Since 2009 protecting Delaware County homes. We've seen every chimney problem and fixed them all.</p></div>
       <div class="wcard"><h3>📋 Written Reports</h3><p>Every inspection includes a clear written report so you know exactly what condition your chimney is in.</p></div>
-      <div class="wcard"><h3>🧹 Spotless Work</h3><p>We cover floors and furniture and use professional vacuums. We leave your home cleaner than we found it.</p></div>
-      <div class="wcard"><h3>💬 Honest Advice</h3><p>We tell you what you actually need — not the most expensive option. No upselling, no scare tactics.</p></div>
-      <div class="wcard"><h3>⏰ On Time Every Time</h3><p>We respect your schedule. You get a confirmation call and we show up when we say we will.</p></div>
-      <div class="wcard"><h3>🛡️ Fully Insured</h3><p>Fully licensed and insured in Pennsylvania. Your home and family are protected on every single job.</p></div>
+      <div class="wcard"><h3>🧹 Spotless Work</h3><p>We cover floors and furniture. We leave your home cleaner than we found it — guaranteed.</p></div>
+      <div class="wcard"><h3>💬 Honest Advice</h3><p>We tell you what you actually need — not the most expensive option. No upselling, ever.</p></div>
+      <div class="wcard"><h3>⏰ On Time Every Time</h3><p>Confirmation call before every job. We show up when we say we will.</p></div>
+      <div class="wcard"><h3>🛡️ Fully Insured</h3><p>Licensed and insured in Pennsylvania. Your home is protected on every single job.</p></div>
     </div>
   </div>
 </section>
 
-<section id="reviews">
+<section class="reviews-strip">
   <div class="container">
-    <div class="tc"><span class="tag">Customer Reviews</span><h2>What Delaware County Says</h2><p class="sub">Hundreds of homeowners trust us with their chimney every year.</p></div>
+    <div class="tc"><span class="tag">Reviews</span><h2>What Customers Say</h2><p class="sub">Hundreds of Delaware County homeowners trust us every year.</p></div>
     <div class="rgrid">
-      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Called Monday, they were out Tuesday. Super professional, explained everything, cleaned up perfectly. Will use every year from now on."</p><div class="rname">Mike T. <span>— Drexel Hill, PA</span></div></div>
-      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Had a smoke problem every time we used the fireplace. Delco found the issue fast and fixed it the same week. Fair price, great communication."</p><div class="rname">Sarah K. <span>— Springfield, PA</span></div></div>
-      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Needed a Level 2 inspection for our home sale fast. They squeezed us in, gave us a professional report, and we closed on time. Lifesavers!"</p><div class="rname">James & Linda R. <span>— Media, PA</span></div></div>
-      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Been using Delco Chimney for 3 years. Honest, clean, reliable every single time. They're the only ones I trust with my fireplace."</p><div class="rname">Patricia M. <span>— Upper Darby, PA</span></div></div>
-      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Had a bird nest in the chimney — they came out same day, removed everything, installed a cap. Very reasonable price too."</p><div class="rname">Dave H. <span>— Havertown, PA</span></div></div>
-      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"The estimate was exactly what I paid. No surprises. Rare to find a contractor this honest and thorough."</p><div class="rname">Angela B. <span>— Swarthmore, PA</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Called Monday, out Tuesday. Super professional, explained everything, cleaned up perfectly."</p><div class="rname">Mike T. <span>— Drexel Hill, PA</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Smoke problem every time we used the fireplace. Delco found the issue fast and fixed it same week."</p><div class="rname">Sarah K. <span>— Springfield, PA</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Needed Level 2 for our home sale fast. They squeezed us in and we closed on time. Lifesavers!"</p><div class="rname">James & Linda R. <span>— Media, PA</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"3 years running. Honest, clean, reliable every single time. The only ones I trust."</p><div class="rname">Patricia M. <span>— Upper Darby, PA</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"Bird nest in the chimney — same day removal, installed a cap. Very reasonable price."</p><div class="rname">Dave H. <span>— Havertown, PA</span></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtext">"The estimate was exactly what I paid. Rare to find a contractor this honest."</p><div class="rname">Angela B. <span>— Swarthmore, PA</span></div></div>
     </div>
   </div>
 </section>
 
-<section id="about">
+<div class="cta-strip">
   <div class="container">
-    <div class="about-inner">
-      <div class="about-img-wrap">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Delco Chimney Sweeps Wallingford PA" />
-      </div>
-      <div class="about-text">
-        <span class="tag">About Us</span>
-        <h2>Delaware County's Local Chimney Experts</h2>
-        <p>With over <strong>15 years of hands-on experience</strong>, I've seen it all — from routine sweeps to complex masonry rebuilds. Delco Chimney Sweeps was founded with one goal: give Delaware County homeowners a chimney company they can actually trust.</p>
-        <p>We're not a franchise, a call center, or a national chain. We're a local business based right here in <strong>Wallingford, PA</strong>, and our reputation is built one job at a time.</p>
-        <p>Whether you need routine chimney cleaning, a comprehensive inspection for a home sale, or urgent repairs — count on honest assessments, fair pricing, and meticulous workmanship.</p>
-        <div class="certs">
-          <div class="cert"><span class="cert-dot"></span>Licensed & Fully Insured in Pennsylvania</div>
-          <div class="cert"><span class="cert-dot"></span>15+ Years Industry Experience</div>
-          <div class="cert"><span class="cert-dot"></span>Serving Delaware County Since 2009</div>
-          <div class="cert"><span class="cert-dot"></span>5-Star Rated on Google</div>
-        </div>
-        <div style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap">
-          <a href="#request" class="btn btn-primary">Get Free Estimate →</a>
-          <a href="tel:6108039649" class="btn btn-outline">📞 Call Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="area">
-  <div class="container">
-    <div class="tc"><span class="tag">Service Area</span><h2>Serving All of Delaware County</h2><p class="sub">Based in Wallingford, PA — we come to you throughout Delaware County and surrounding communities.</p></div>
-    <div class="atags">
-      <span class="atag">Wallingford</span><span class="atag">Media</span><span class="atag">Swarthmore</span><span class="atag">Springfield</span><span class="atag">Morton</span><span class="atag">Ridley Park</span><span class="atag">Brookhaven</span><span class="atag">Upper Darby</span><span class="atag">Drexel Hill</span><span class="atag">Havertown</span><span class="atag">Broomall</span><span class="atag">Newtown Square</span><span class="atag">Glenolden</span><span class="atag">Norwood</span><span class="atag">Lansdowne</span><span class="atag">Chester</span><span class="atag">Folcroft</span><span class="atag">Sharon Hill</span><span class="atag">Yeadon</span><span class="atag">Darby</span><span class="atag">And More →</span>
-    </div>
-  </div>
-</section>
-
-<div class="cta-section">
-  <div class="container">
-    <h2>Ready to Schedule Your Chimney Service?</h2>
-    <p>Don't wait until there's a problem. Annual cleaning and inspection keeps your family safe all season long.</p>
+    <h2>Ready to Schedule?</h2>
+    <p>Annual cleaning and inspection keeps your family safe all season long. Free estimates always.</p>
     <div class="cta-btns">
-      <a href="#request" class="btn btn-primary">Request Service Online →</a>
+      <a href="contact.html" class="btn btn-primary">Request Service Online →</a>
       <a href="tel:6108039649" class="btn btn-outline">📞 (610) 803-9649</a>
     </div>
   </div>
 </div>
 
 <footer>
-<!-- ADMIN LOGIN MODAL -->
-<div id="adminModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999;align-items:center;justify-content:center;padding:20px">
-  <div style="background:#1a2235;border:1px solid rgba(0,212,255,.3);border-radius:12px;padding:36px;width:100%;max-width:380px">
-    <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:6px">Admin Access</h3>
-    <p style="font-size:.83rem;color:#8892a4;margin-bottom:20px">Enter your admin password to continue</p>
-    <input id="adminPass" type="password" placeholder="Password" style="width:100%;padding:11px 14px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.15);border-radius:6px;font-size:.95rem;color:#fff;outline:none;margin-bottom:12px;font-family:'Inter',sans-serif" />
-    <p id="adminErr" style="display:none;color:#ef4444;font-size:.82rem;margin-bottom:10px">Incorrect password. Try again.</p>
-    <div style="display:flex;gap:10px">
-      <button id="adminLoginBtn" style="flex:1;background:#00d4ff;color:#000;padding:11px;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;font-size:.95rem">Enter Dashboard</button>
-      <button id="adminCancel" style="background:transparent;color:#8892a4;padding:11px 16px;border:1px solid rgba(255,255,255,.15);border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif">Cancel</button>
-    </div>
-  </div>
-</div>
-  <div class="footer-inner">
+  <div class="container">
     <div class="ftop">
-      <div class="fbrand">
-        <div class="flogo">DELCO <span>CHIMNEY</span> SWEEPS</div>
-        <p>Professional chimney cleaning, inspection, and repair backed by 15 years of experience. Protecting Delaware County homes since 2009.</p>
-        <p style="color:var(--cyan);font-weight:600;margin-top:8px">(610) 803-9649</p>
-        <p>info@delcochimneysweeps.com</p>
-      </div>
-      <div class="fcol"><h4>Services</h4><a href="#services">Chimney Cleaning</a><a href="#services">Level 1 Inspection</a><a href="#services">Level 2 Inspection</a><a href="#services">Dryer Vent Cleaning</a><a href="#services">Chimney Repair</a><a href="#services">Flue Relining</a><a href="#services">Stove Services</a></div>
-      <div class="fcol"><h4>Company</h4><a href="#about">About Us</a><a href="#reviews">Reviews</a><a href="#area">Service Area</a><a href="#request">Free Estimate</a></div>
-      <div class="fcol"><h4>Contact</h4><a href="tel:6108039649">(610) 803-9649</a><a href="mailto:info@delcochimneysweeps.com">info@delcochimneysweeps.com</a><p>Wallingford, PA 19086</p><p>Mon–Fri: 8am–6pm</p><p>Weekend appts available</p></div>
+      <div><div class="fbrand-name">DELCO <span>CHIMNEY</span> SWEEPS</div><p class="fbrand">Professional chimney cleaning, inspection, and repair. Protecting Delaware County homes since 2009.<br><br><a href="tel:6108039649" style="color:var(--cyan);font-weight:600">(610) 803-9649</a><br><a href="mailto:info@delcochimneysweeps.com" style="color:var(--gray)">info@delcochimneysweeps.com</a></p></div>
+      <div class="fcol"><h4>Services</h4><a href="services.html">Chimney Cleaning</a><a href="services.html">Level 1 Inspection</a><a href="services.html">Level 2 Inspection</a><a href="services.html">Dryer Vent Cleaning</a><a href="services.html">Chimney Repair</a><a href="services.html">Flue Relining</a></div>
+      <div class="fcol"><h4>Company</h4><a href="about.html">About Us</a><a href="services.html">All Services</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a href="contact.html">Free Estimate</a></div>
+      <div class="fcol"><h4>Contact</h4><a href="tel:6108039649">(610) 803-9649</a><a href="mailto:info@delcochimneysweeps.com">info@delcochimneysweeps.com</a><p>Wallingford, PA 19086</p><p>Mon–Fri: 8am–6pm</p><p>Weekends available</p></div>
     </div>
     <div class="fbot">
       <p>© 2026 Delco Chimney Sweeps · Wallingford, PA · All Rights Reserved</p>
-      <p>Serving Delaware County, PA since 2009 · <span id="adminTrigger" style="cursor:pointer;opacity:.3;user-select:none" title="">⚙</span></p>
+      <p>Serving Delaware County, PA since 2009</p>
     </div>
   </div>
 </footer>
 
+<!-- ADMIN LOGIN MODAL -->
+<div class="admin-modal" id="adminModal">
+  <div class="admin-box">
+    <h3>Admin Access</h3>
+    <p class="sub2">Enter your password to access the dashboard</p>
+    <input type="password" id="adminPass" placeholder="Admin password" />
+    <p class="admin-err" id="adminErr">Incorrect password. Try again.</p>
+    <div class="admin-btns">
+      <button class="ab1" id="adminLoginBtn">Enter Dashboard</button>
+      <button class="ab2" id="adminCancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <script>
-// Admin login
-document.getElementById('adminTrigger').addEventListener('click', function() {
-  document.getElementById('adminModal').style.display = 'flex';
-  document.getElementById('adminPass').focus();
-});
-document.getElementById('adminLoginBtn').addEventListener('click', checkAdmin);
-document.getElementById('adminPass').addEventListener('keydown', e => { if(e.key==='Enter') checkAdmin(); });
-document.getElementById('adminCancel').addEventListener('click', () => { document.getElementById('adminModal').style.display='none'; document.getElementById('adminPass').value=''; document.getElementById('adminErr').style.display='none'; });
-function checkAdmin() {
-  const pass = document.getElementById('adminPass').value;
-  // Change 'delco2026' to whatever password you want
-  if (pass === 'delco2026') {
-    window.location.href = '/admin-dashboard.html';
-  } else {
-    document.getElementById('adminErr').style.display = 'block';
-    document.getElementById('adminPass').value = '';
-    document.getElementById('adminPass').focus();
-  }
-}
-
-const { createClient } = supabase;
-const sb = createClient('https://sfxwlimkshkmdgyofecp.supabase.co','sb_publishable_KuB0-_42_bVJShQ-tT-Ldg_oovGR5CC');
-
 document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
-document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
-window.addEventListener('scroll',()=>document.querySelector('nav').style.boxShadow=window.scrollY>60?'0 2px 30px rgba(0,0,0,.5)':'none');
-
-async function handleReq(e) {
-  e.preventDefault();
-  const form = document.getElementById('reqForm');
-  const d = Object.fromEntries(new FormData(form));
-  const { error } = await sb.from('service_requests').insert([{
-    name: d.first_name+' '+d.last_name,
-    email: d.email||'',
-    phone: d.phone,
-    address: d.address,
-    service_type: d.service_type,
-    message: d.message||'',
-    status: 'new'
-  }]);
-  if (error) { alert('Something went wrong. Please call (610) 803-9649'); return; }
-  form.style.display='none';
-  document.getElementById('successMsg').style.display='block';
-  window.scrollTo({top:document.getElementById('request').offsetTop-80,behavior:'smooth'});
+document.querySelectorAll('#navLinks a:not(#adminBtn)').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+document.getElementById('adminBtn').addEventListener('click',e=>{e.preventDefault();document.getElementById('adminModal').classList.add('open');document.getElementById('adminPass').focus();});
+document.getElementById('adminCancel').addEventListener('click',()=>{document.getElementById('adminModal').classList.remove('open');document.getElementById('adminPass').value='';document.getElementById('adminErr').style.display='none';});
+document.getElementById('adminLoginBtn').addEventListener('click',checkAdmin);
+document.getElementById('adminPass').addEventListener('keydown',e=>{if(e.key==='Enter')checkAdmin();});
+function checkAdmin(){
+  const p=document.getElementById('adminPass').value;
+  if(p==='delco2026'){window.location.href='admin-dashboard.html';}
+  else{document.getElementById('adminErr').style.display='block';document.getElementById('adminPass').value='';}
 }
+window.addEventListener('scroll',()=>document.querySelector('nav').style.boxShadow=window.scrollY>40?'0 2px 24px rgba(0,0,0,.5)':'none');
 </script>
 </body>
 </html>
